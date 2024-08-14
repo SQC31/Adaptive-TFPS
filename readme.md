@@ -2,12 +2,18 @@
 This project compute the numerical solution of steady state radiative transfer equation discretized by DOM and Adaptive TFPS, which is capable of adaptively compress the angular domain using the information from optical parameters.
 
 # Description of the code
-new_trial.m: the script which computes the numerical solution of steady state radiative transfer equation discretized by DOM and Adaptive TFPS
+new_trial.m: the script which computes the numerical solution of steady state radiative transfer equation discretized by DOM and Adaptive TFPS.
+
 assemble.m: offline assembling of discrete operators and revealing low rank structures.
+
 solution.m: online construction of right hand side vector, special solution and final solution.
-HG.m: discretize the kernel function
+
+HG.m: discretize the kernel function.
+
 myfind.m: get the row index, column index and element value for all elements in a matrix.
+
 qnwlege1.m, qnwlege1.m and qnwlege1.m: Discretie Ordinate Method for 1d, 2d and 3d case.
+
 Figure/plot_figure.m: the script which plot the figures in our article.
 
 # Description of the data files in the folder Figure
