@@ -291,4 +291,23 @@ for j=1:J
 end
 Dc=sparse(list_row,list_col,list_num,4*M*I(1)*J(1),VecSumxy(end));
 
+%% assemble Dc100 matrix 
+% maps the coefficients of Adaptive TFPS basis functions to the value of
+% angular flux at interface layer x\in [1/32,7/32]$, $y=1/4-1/1280$
+list_row=zeros(0,1); list_col=zeros(0,1); list_num=zeros(0,1);
+count=0;
+for j=8:8
+    for i=2:7
+        for x=1:10
+                block=fsm(xl+(i-1)*hx+(2*x-1)*hx/20,yl+j*hy-hy/40,i,j);
+                [ti,tj,ts]=myfind(block);
+                l=length(ts);
+                list_row(count+1:count+l)=(10*(i-2)+x-1)*4*M+ti;
+                list_col(count+1:count+l)=VecSumxy((j-1)*I+i)+tj;
+                list_num(count+1:count+l)=ts;
+                count=count+l;
+        end
+    end
+end
+Dc100=sparse(list_row,list_col,list_num,40*M*6,VecSumxy(end));
 end

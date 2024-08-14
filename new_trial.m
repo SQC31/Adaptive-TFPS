@@ -89,7 +89,7 @@ bc={psiL,psiR,psiB,psiT};
 
 %% offline assemble
 % assemble corresponding matrices and show the existence of low rankness
-[A,Dc,VecSize,Fsm,Ml,Mr,Mb,Mt]=assemble(parameters,coefficients);
+[A,Dc,VecSize,Fsm,Ml,Mr,Mb,Mt] = assemble(parameters,coefficients);
 %% online solution
 [b,b_full,Q,Q100]=solution(parameters,coefficients,bc,Ml,Mr,Mb,Mt);
 %% phi
@@ -102,6 +102,11 @@ for j=1:J
     end
 end
 
+% psi=Dc100*alpha;
+% phi=zeros(10*6,1);
+% for i=1:60
+%     phi(i)=omega'*psi((i-1)*4*M+(1:4*M));
+% end
 %% plot solution at cell centers
 [xmesh,ymesh]=meshgrid(xl+1/2*hx:hx:xr-1/2*hx,yl+1/2*hy:hy:yr-1/2*hy);
 figure(1)
