@@ -37,5 +37,5 @@ crho00, crho30, crho23: the value of $\mathop{\max}\limits_{\delta} \Vert E_{\de
 
 matrixA: the sparsity pattern for the linear operator discretized by DOM and TFPS with $I\times I=4\times 4$ grid and $M=3$.
 
-# how to use the code to reproduce the results
+# How to use the code to reproduce the results
 Firstly run new_trial.m to get the data files in the folder Figure (or use the data files in the folder Figure directly). Then run plot_figure.m to get the figures in our article for RTE in xy geometry cases.
